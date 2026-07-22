@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3wpylbfkgb7e"]
+
+[node name="Game Window" type="Control" unique_id=1828030789]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=132294549]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 119.0
+offset_right = 556.0
+offset_bottom = 225.0
+text = "Welcome "

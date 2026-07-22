@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://romv6fsh8pyg"]
+
+[ext_resource type="Script" uid="uid://ckh2qi78f66at" path="res://line_edit.gd" id="1_5g6ec"]
+[ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="2_snugj"]
+[ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="3_rcicx"]
+
+[node name="SecondWindow" type="Control" unique_id=1035190126]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=244849484]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 333.0
+offset_right = 666.0
+offset_bottom = 405.0
+placeholder_text = "Name"
+script = ExtResource("1_5g6ec")
+
+[node name="Please" type="Label" parent="." unique_id=699328083]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 241.0
+offset_right = 849.0
+offset_bottom = 283.0
+theme_override_font_sizes/font_size = 30
+text = "Please give us a name to call you by:"
+
+[node name="Press" type="Label" parent="." unique_id=1658396247]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 293.0
+offset_right = 666.0
+offset_bottom = 316.0
+text = "Press Enter when ready"
+
+[node name="Notes" type="Label" parent="." unique_id=1984372959]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 413.0
+offset_right = 661.0
+offset_bottom = 514.0
+text = "Please Note:
+Character Limit : 15
+No Numbers
+No Special Characters"
+
+[node name="Exit" type="Button" parent="." unique_id=1560486033]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 31.0
+text = "Exit"
+script = ExtResource("2_snugj")
+
+[node name="Main Menu" type="Button" parent="." unique_id=1192227351]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 3.0
+offset_right = 1155.0
+offset_bottom = 34.0
+text = "Back to Title Screen
+"
+script = ExtResource("3_rcicx")
+
+[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

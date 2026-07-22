@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dudb7ygicl14d"]
+
+[ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_iu22o"]
+[ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_7ni1d"]
+
+[node name="Settings Window" type="Control" unique_id=644950564]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="." unique_id=2022311951]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 332.0
+offset_right = 693.0
+offset_bottom = 355.0
+text = "Work in progress come back later "
+
+[node name="Exit" type="Button" parent="." unique_id=376809682]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Exit"
+script = ExtResource("1_iu22o")
+
+[node name="Main Menu" type="Button" parent="." unique_id=647133349]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 371.0
+offset_right = 646.0
+offset_bottom = 402.0
+text = "Back to Title Screen
+"
+script = ExtResource("2_7ni1d")
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

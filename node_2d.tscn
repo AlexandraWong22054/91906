@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b8gurxoiqb2l3"]
+
+[ext_resource type="Script" uid="uid://ba2shp4kfp0pj" path="res://start_button.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://ek1kbbgxfrmt" path="res://button_3.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://5t75td7drkvp" path="res://settings_button.gd" id="2_epypp"]
+
+[node name="Title Window" type="Control" unique_id=349448838]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Start Button" type="Button" parent="." unique_id=229061149]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 349.0
+offset_right = 650.0
+offset_bottom = 420.0
+theme_override_font_sizes/font_size = 30
+text = "Start"
+script = ExtResource("1_0e48y")
+
+[node name="Settings Button" type="Button" parent="." unique_id=149433592]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 436.0
+offset_right = 651.0
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+script = ExtResource("2_epypp")
+
+[node name="Exit Button" type="Button" parent="." unique_id=1465005998]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 521.0
+offset_right = 651.0
+offset_bottom = 592.0
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+script = ExtResource("1_wtcfe")
+
+[connection signal="pressed" from="Start Button" to="Start Button" method="_on_pressed"]
+[connection signal="pressed" from="Settings Button" to="Start Button" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Settings Button" to="Settings Button" method="_on_pressed"]
+[connection signal="pressed" from="Exit Button" to="Exit Button" method="_on_pressed"]

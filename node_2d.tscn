@@ -38,14 +38,6 @@ theme_override_font_sizes/font_size = 30
 text = "Exit"
 script = ExtResource("1_wtcfe")
 
-[node name="Label" type="Label" parent="." unique_id=275974050]
-layout_mode = 0
-offset_left = 341.0
-offset_top = 126.0
-offset_right = 465.0
-offset_bottom = 176.0
-text = "Testing Github"
-
 [connection signal="pressed" from="Start Button" to="Start Button" method="_on_pressed"]
 [connection signal="pressed" from="Settings Button" to="Start Button" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Settings Button" to="Settings Button" method="_on_pressed"]

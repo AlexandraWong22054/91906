@@ -9,7 +9,7 @@
 layout_mode = 3
 anchors_preset = 0
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=244849484]
+[node name="Name" type="LineEdit" parent="." unique_id=244849484]
 layout_mode = 0
 offset_left = 485.0
 offset_top = 214.0
@@ -18,7 +18,24 @@ offset_bottom = 286.0
 placeholder_text = "Name"
 script = ExtResource("1_5g6ec")
 
-[node name="Continue" type="Button" parent="LineEdit" unique_id=1998237502]
+[node name="No_Input" type="Window" parent="Name" unique_id=1336080941]
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 300)
+
+[node name="NameError" type="Label" parent="Name/No_Input" unique_id=1990294556]
+offset_left = 126.0
+offset_top = 90.0
+offset_right = 379.0
+offset_bottom = 223.0
+theme_override_font_sizes/font_size = 25
+text = "Your name is empty!
+Please enter a name."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="Name" unique_id=1998237502]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 328.0
@@ -29,7 +46,7 @@ text = "Click to
 Continue"
 script = ExtResource("4_rfiwf")
 
-[node name="Greeting" type="Label" parent="LineEdit" unique_id=1811473091]
+[node name="Greeting" type="Label" parent="Name" unique_id=1811473091]
 layout_mode = 0
 offset_left = -16.0
 offset_top = 273.0
@@ -82,8 +99,9 @@ text = "Back to Title Screen
 "
 script = ExtResource("3_rcicx")
 
-[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
-[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
-[connection signal="pressed" from="LineEdit/Continue" to="LineEdit/Continue" method="_on_pressed"]
+[connection signal="text_changed" from="Name" to="Name" method="_on_text_changed"]
+[connection signal="text_submitted" from="Name" to="Name" method="_on_text_submitted"]
+[connection signal="close_requested" from="Name/No_Input" to="Name" method="_on_no_input_close_requested"]
+[connection signal="pressed" from="Name/Continue" to="Name/Continue" method="_on_pressed"]
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

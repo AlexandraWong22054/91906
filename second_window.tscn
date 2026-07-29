@@ -12,19 +12,21 @@ anchors_preset = 0
 [node name="Name" type="LineEdit" parent="." unique_id=244849484]
 layout_mode = 0
 offset_left = 485.0
-offset_top = 214.0
+offset_top = 203.0
 offset_right = 666.0
-offset_bottom = 286.0
+offset_bottom = 275.0
 placeholder_text = "Name"
 script = ExtResource("1_5g6ec")
 
-[node name="No_Input" type="Window" parent="Name" unique_id=1336080941]
+[node name="Invalid_Input" type="Window" parent="Name" unique_id=1336080941]
 transparent_bg = true
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(500, 300)
+visible = false
 
-[node name="NameError" type="Label" parent="Name/No_Input" unique_id=1990294556]
+[node name="NameError" type="Label" parent="Name/Invalid_Input" unique_id=1990294556]
+visible = false
 offset_left = 126.0
 offset_top = 90.0
 offset_right = 379.0
@@ -34,6 +36,37 @@ text = "Your name is empty!
 Please enter a name."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SpaceError" type="Label" parent="Name/Invalid_Input" unique_id=1378993869]
+visible = false
+offset_left = 75.0
+offset_top = 140.0
+offset_right = 428.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 25
+text = "Please do not include spaces."
+
+[node name="NumberError" type="Label" parent="Name/Invalid_Input" unique_id=1486588367]
+visible = false
+offset_left = 59.0
+offset_top = 99.0
+offset_right = 446.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 25
+text = "Please do not include numbers. 
+Letters Only"
+horizontal_alignment = 1
+
+[node name="SpecialCharError" type="Label" parent="Name/Invalid_Input" unique_id=1716925974]
+visible = false
+offset_left = 2.0
+offset_top = 104.0
+offset_right = 491.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 25
+text = "Please do not include special characters.
+Letters only."
+horizontal_alignment = 1
 
 [node name="Continue" type="Button" parent="Name" unique_id=1998237502]
 layout_mode = 0
@@ -56,31 +89,33 @@ theme_override_font_sizes/font_size = 25
 
 [node name="Please" type="Label" parent="." unique_id=699328083]
 layout_mode = 0
-offset_left = 327.0
-offset_top = 117.0
-offset_right = 849.0
-offset_bottom = 159.0
-theme_override_font_sizes/font_size = 30
+offset_left = 147.0
+offset_top = 86.0
+offset_right = 1019.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 50
 text = "Please give us a name to call you by:"
 
 [node name="Press" type="Label" parent="." unique_id=1658396247]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 166.0
-offset_right = 667.0
-offset_bottom = 189.0
+offset_left = 460.0
+offset_top = 160.0
+offset_right = 688.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 20
 text = "Press Enter when ready"
 
 [node name="Notes" type="Label" parent="." unique_id=1984372959]
 layout_mode = 0
-offset_left = 492.0
+offset_left = 415.0
 offset_top = 298.0
-offset_right = 661.0
-offset_bottom = 399.0
+offset_right = 724.0
+offset_bottom = 419.0
+theme_override_font_sizes/font_size = 20
 text = "Please Note:
 Character Limit : 15
 No Numbers
-No Special Characters"
+No Special Characters or Spaces"
 
 [node name="Exit" type="Button" parent="." unique_id=1560486033]
 layout_mode = 0
@@ -101,7 +136,7 @@ script = ExtResource("3_rcicx")
 
 [connection signal="text_changed" from="Name" to="Name" method="_on_text_changed"]
 [connection signal="text_submitted" from="Name" to="Name" method="_on_text_submitted"]
-[connection signal="close_requested" from="Name/No_Input" to="Name" method="_on_no_input_close_requested"]
+[connection signal="close_requested" from="Name/Invalid_Input" to="Name" method="_on_no_input_close_requested"]
 [connection signal="pressed" from="Name/Continue" to="Name/Continue" method="_on_pressed"]
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

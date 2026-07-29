@@ -3,24 +3,37 @@ extends LineEdit
 var player_name : String = ""
 @onready var Continue = get_node("Continue")
 @onready var Greeting = get_node("Greeting")
-@onready var Noname = get_node("No_Input")
-
+@onready var Invalid = get_node("Invalid_Input")
+@onready var Name = get_node("Invalid_Input/NameError")
+@onready var Space = get_node("Invalid_Input/SpaceError")
+@onready var Number = get_node("Invalid_Input/NumberError")
+@onready var SpecChar = get_node("Invalid_Input/SpecialCharError")
 
 func _ready():
 	max_length = 15 #only 15 character limit
-	Noname.hide()
+
+func _on_text_changed(new_text: String):
+	if " " in new_text:
+		var cursor_place = caret_column #saves where the cursor most recently is
+		text = new_text.replace(" ","") #when space button is pressed, remove the space from occuring
+		caret_column = cursor_place -1 #Resets cursor place so that inputing a space doesn't move back to the start
+		Invalid.show()
+		Space.show()
 
 #Changes Player name to the submitted text
-func _on_text_submitted(new_text: String):
+func _on_text_submitted(new_text: String): 
 	if new_text.is_empty():
-		print("Test")
-		Noname.show()
+		Invalid.show() #Shows popup window
+		Name.show()
 	else:
 		player_name = new_text
 		print("Name = ", player_name)
 		Continue.show() #Shows the "Click to Continue" button
 		Greeting.text = (str("Hello, ") + (player_name))
 
-
-func _on_no_input_close_requested():
-	Noname.hide()
+func _on_no_input_close_requested(): #hides the popup window when the x is clicked.
+	Invalid.hide()
+	Name.hide()
+	Space.hide()
+	Number.hide()
+	SpecChar.hide()

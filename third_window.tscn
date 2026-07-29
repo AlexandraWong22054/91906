@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://btsrlhk7ymlw0"]
 
+[ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_3qxjr"]
+[ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_eildx"]
+
 [node name="ThirdWindow" type="Control" unique_id=1893395865]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Exit" type="Button" parent="." unique_id=352116507]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 31.0
+text = "Exit"
+script = ExtResource("1_3qxjr")
+
+[node name="Main Menu" type="Button" parent="." unique_id=1116564176]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 3.0
+offset_right = 1155.0
+offset_bottom = 34.0
+text = "Back to Title Screen
+"
+script = ExtResource("2_eildx")
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

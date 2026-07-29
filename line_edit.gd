@@ -1,6 +1,8 @@
 extends LineEdit
 
 var player_name : String = ""
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ]
+var Special = ["~","!","@","#","$","%","^","&","*","(",")","<",">","~","`","-","_","=","+","{","}","[","]","|","/","?","\\",".",",","'",]
 @onready var Continue = get_node("Continue")
 @onready var Greeting = get_node("Greeting")
 @onready var Invalid = get_node("Invalid_Input")
@@ -19,7 +21,17 @@ func _on_text_changed(new_text: String):
 		caret_column = cursor_place -1 #Resets cursor place so that inputing a space doesn't move back to the start
 		Invalid.show()
 		Space.show()
-
+	if new_text in numbers:
+		print("Numbers detected!")
+		var cursor_place = caret_column 
+		text = new_text.replace("1", "") 
+		caret_column = cursor_place -1
+		Invalid.show()
+		Number.show()
+	if new_text in Special:
+		print("Special Characters Detected")
+		Invalid.show()
+		SpecChar.show()
 #Changes Player name to the submitted text
 func _on_text_submitted(new_text: String): 
 	if new_text.is_empty():

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btsrlhk7ymlw0"]
 
 [ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_3qxjr"]
+[ext_resource type="Script" uid="uid://dsscw5c8lu8nj" path="res://age.gd" id="1_eildx"]
 [ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_eildx"]
 
 [node name="ThirdWindow" type="Control" unique_id=1893395865]
@@ -10,6 +11,91 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Age" type="LineEdit" parent="." unique_id=726029690]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 203.0
+offset_right = 666.0
+offset_bottom = 275.0
+script = ExtResource("1_eildx")
+
+[node name="Invalid_Input" type="Window" parent="Age" unique_id=482216487]
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 300)
+visible = false
+
+[node name="AgeError" type="Label" parent="Age/Invalid_Input" unique_id=1673280789]
+visible = false
+offset_left = 126.0
+offset_top = 90.0
+offset_right = 379.0
+offset_bottom = 223.0
+theme_override_font_sizes/font_size = 25
+text = "Your age is empty!
+Please enter an age."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpaceError" type="Label" parent="Age/Invalid_Input" unique_id=899999129]
+visible = false
+offset_left = 75.0
+offset_top = 140.0
+offset_right = 428.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 25
+text = "Please do not include spaces."
+
+[node name="LetterError" type="Label" parent="Age/Invalid_Input" unique_id=1262207321]
+visible = false
+offset_left = 59.0
+offset_top = 99.0
+offset_right = 446.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 25
+text = "Please do not include letters. 
+Numbers Only"
+horizontal_alignment = 1
+
+[node name="SpecialCharError" type="Label" parent="Age/Invalid_Input" unique_id=1264007297]
+visible = false
+offset_left = 2.0
+offset_top = 104.0
+offset_right = 491.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 25
+text = "Please do not include special characters.
+Numbers only."
+horizontal_alignment = 1
+
+[node name="OldestError" type="Label" parent="Age/Invalid_Input" unique_id=487118300]
+visible = false
+offset_left = 2.0
+offset_top = 59.0
+offset_right = 491.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 25
+text = "As of July 2026, the oldest person
+ lived to 122 years old.
+Are you the new world record holder???
+Please enter a more realistic age."
+horizontal_alignment = 1
+
+[node name="ChildError" type="Label" parent="Age/Invalid_Input" unique_id=709568813]
+visible = false
+offset_left = 2.0
+offset_top = 53.0
+offset_right = 491.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 25
+text = "...Are you sure you're below 
+the age of 10?
+If so, perhaps wait to play this game
+ when you are older.
+If not please enter a more realistic age."
+horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="." unique_id=352116507]
 layout_mode = 0
@@ -28,5 +114,39 @@ text = "Back to Title Screen
 "
 script = ExtResource("2_eildx")
 
+[node name="Please" type="Label" parent="." unique_id=312115720]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 86.0
+offset_right = 1019.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 50
+text = "Please let us know how old you are:"
+
+[node name="Press" type="Label" parent="." unique_id=1229777025]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 160.0
+offset_right = 688.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 20
+text = "Press Enter when ready"
+
+[node name="Notes" type="Label" parent="." unique_id=358570927]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 298.0
+offset_right = 724.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 20
+text = "Please Note:
+Maximum age is 123
+Minimum age is 10
+No Letters
+No Special Characters or Spaces"
+
+[connection signal="text_changed" from="Age" to="Age" method="_on_text_changed"]
+[connection signal="text_submitted" from="Age" to="Age" method="_on_text_submitted"]
+[connection signal="close_requested" from="Age/Invalid_Input" to="Age" method="_on_invalid_input_close_requested"]
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

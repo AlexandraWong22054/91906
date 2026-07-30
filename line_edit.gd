@@ -3,6 +3,7 @@ extends LineEdit
 var player_name : String = ""
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ]
 var Special = ["~","!","@","#","$","%","^","&","*","(",")","<",">","~","`","-","_","=","+","{","}","[","]","|","/","?","\\",".",",","'",]
+#Calls other nodes and connects them to variables to use in this script.
 @onready var Continue = get_node("Continue")
 @onready var Greeting = get_node("Greeting")
 @onready var Invalid = get_node("Invalid_Input")
@@ -15,12 +16,12 @@ func _ready():
 	max_length = 15 #only 15 character limit
 
 func _on_text_changed(new_text: String):
-	if " " in new_text:
+	if " " in new_text: #if a space is input
 		var cursor_place = caret_column #saves where the cursor most recently is
 		text = new_text.replace(" ","") #when space button is pressed, remove the space from occuring
 		caret_column = cursor_place -1 #Resets cursor place so that inputing a space doesn't move back to the start
-		Invalid.show()
-		Space.show()
+		Invalid.show() #error window pops up
+		Space.show() #specific error message pops up
 	if new_text in numbers:
 		print("Numbers detected!")
 		var cursor_place = caret_column 

@@ -39,6 +39,7 @@ func _on_text_submitted(new_text: String):
 		Invalid.show() #Shows popup window
 		Name.show()
 	else:
+		editable = false #prevents user from changing name after entering
 		player_name = new_text
 		print("Name = ", player_name)
 		Continue.show() #Shows the "Click to Continue" button

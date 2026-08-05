@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_3qxjr"]
 [ext_resource type="Script" uid="uid://dsscw5c8lu8nj" path="res://age.gd" id="1_eildx"]
+[ext_resource type="Script" uid="uid://dpbqfh5ys754r" path="res://start_game.gd" id="2_acimi"]
 [ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_eildx"]
 
 [node name="ThirdWindow" type="Control" unique_id=1893395865]
@@ -97,6 +98,18 @@ If so, perhaps wait to play this game
 If not please enter a more realistic age."
 horizontal_alignment = 1
 
+[node name="StartGame" type="Button" parent="Age" unique_id=313701107]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 328.0
+offset_right = 169.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 22
+text = "Click to
+Continue"
+script = ExtResource("2_acimi")
+
 [node name="Exit" type="Button" parent="." unique_id=352116507]
 layout_mode = 0
 offset_right = 37.0
@@ -148,5 +161,6 @@ No Special Characters or Spaces"
 [connection signal="text_changed" from="Age" to="Age" method="_on_text_changed"]
 [connection signal="text_submitted" from="Age" to="Age" method="_on_text_submitted"]
 [connection signal="close_requested" from="Age/Invalid_Input" to="Age" method="_on_invalid_input_close_requested"]
+[connection signal="pressed" from="Age/StartGame" to="Age/StartGame" method="_on_pressed"]
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

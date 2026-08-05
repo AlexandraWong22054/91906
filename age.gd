@@ -1,7 +1,8 @@
 extends LineEdit
 
 var player_age : String = ""
-var regex = RegEx.new()
+var regexL: = RegEx.new()
+var regexSC = RegEx.new()
 @onready var Invalid = get_node("Invalid_Input")
 @onready var Age = get_node("Invalid_Input/AgeError")
 @onready var Space = get_node("Invalid_Input/AgeError")
@@ -9,12 +10,12 @@ var regex = RegEx.new()
 @onready var SpecChar = get_node("Invalid_Input/SpecialCharError")
 @onready var Old = get_node("Invalid_Input/OldestError")
 @onready var Young = get_node("Invalid_Input/ChildError")
+@onready var Continue = get_node("StartGame")
 
 func _ready():
-	regex.compile(r"[a-zA-Z]") #compiles the alphabet to later check if the input includes a letter.
-
+	regexL.compile(r"[a-zA-Z]") #compiles the alphabet to later check if the input includes a letter.
 func _on_text_changed(new_age):
-	var search = regex.search(new_age) #searches if the input is in the regex compile
+	var search = regexL.search(new_age) #searches if the input is in the regex compile
 	if " " in new_age:
 		var cursor_place = caret_column #Save cursor
 		text = new_age.replace(" ","") #Replace space with nothing, removes the space
@@ -24,7 +25,7 @@ func _on_text_changed(new_age):
 	if search:
 		print("Found letter")
 		var cursor_place = caret_column
-		var replacedage = regex.sub(new_age, "",)
+		var replacedage = regexL.sub(new_age, "",)
 		text = replacedage
 		caret_column = cursor_place -1
 		Invalid.show()
@@ -41,6 +42,11 @@ func _on_text_submitted(new_age):
 	if int_age < 10 and int_age > 0:
 		Invalid.show() #Error popup if age is under minimum
 		Young.show()
+	else:
+		editable = false
+		player_age = new_age
+		print("Age = ", player_age)
+		Continue.show()
 
 func _on_invalid_input_close_requested():
 	Invalid.hide()

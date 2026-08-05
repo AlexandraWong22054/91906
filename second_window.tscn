@@ -69,6 +69,7 @@ Letters only."
 horizontal_alignment = 1
 
 [node name="Continue" type="Button" parent="Name" unique_id=1998237502]
+visible = false
 layout_mode = 0
 offset_left = 15.0
 offset_top = 328.0

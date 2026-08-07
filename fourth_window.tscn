@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cj6a4s5nafqwc"]
 
+[ext_resource type="Script" uid="uid://o41fn74sqw16" path="res://spot_1.gd" id="1_c80jh"]
+
 [node name="FourthWindow" type="Control" unique_id=1670295005]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,130 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Text" type="Label" parent="." unique_id=1908917681]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 32.0
+offset_right = 933.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 50
+text = "Choose a mini-game to play"
+
+[node name="Note" type="Label" parent="." unique_id=687720156]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 108.0
+offset_right = 925.0
+offset_bottom = 131.0
+text = "Click the icon to play, and hover over the text for more information about the minigame"
+
+[node name="Spot1" type="Label" parent="." unique_id=1812347379]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 326.0
+offset_right = 389.0
+offset_bottom = 349.0
+mouse_filter = 0
+text = "Spot the difference: Image Edition"
+script = ExtResource("1_c80jh")
+
+[node name="PanelContainer" type="PanelContainer" parent="Spot1" unique_id=1996629555]
+visible = false
+layout_mode = 0
+offset_left = -15.0
+offset_top = 35.0
+offset_right = 274.0
+offset_bottom = 75.0
+
+[node name="Label" type="Label" parent="Spot1/PanelContainer" unique_id=638898750]
+layout_mode = 2
+mouse_filter = 0
+text = "Pick between 2 images. One will be Ai generated,
+ the other will be a real picture. Pick which one is 
+real and earn points for each correct answer."
+
+[node name="Spot2" type="Label" parent="." unique_id=1247127466]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 326.0
+offset_right = 1060.0
+offset_bottom = 349.0
+mouse_filter = 0
+text = "Spot the difference: Headline Edition"
+script = ExtResource("1_c80jh")
+
+[node name="PanelContainer" type="PanelContainer" parent="Spot2" unique_id=779495830]
+visible = false
+layout_mode = 0
+offset_left = -15.0
+offset_top = 35.0
+offset_right = 274.0
+offset_bottom = 75.0
+
+[node name="Label" type="Label" parent="Spot2/PanelContainer" unique_id=1399724787]
+layout_mode = 2
+mouse_filter = 0
+text = "Pick between 2 new headlines. One will 
+be made up. The other will be a real 
+headline. Pick which one is real and earn 
+points for each correct answer."
+
+[node name="Headline" type="Label" parent="." unique_id=537529076]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 598.0
+offset_right = 389.0
+offset_bottom = 621.0
+mouse_filter = 0
+text = "        Rewriting Headlines"
+script = ExtResource("1_c80jh")
+
+[node name="PanelContainer" type="PanelContainer" parent="Headline" unique_id=1104851237]
+visible = false
+layout_mode = 0
+offset_left = -15.0
+offset_top = -85.0
+offset_right = 362.0
+offset_bottom = -10.0
+
+[node name="Label" type="Label" parent="Headline/PanelContainer" unique_id=1283378]
+layout_mode = 2
+mouse_filter = 0
+text = "You will be given a headline and a prompt.
+Pick new words to input into your headline 
+to fit the prompt and create headline bias."
+
+[node name="Detective" type="Label" parent="." unique_id=1669206330]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 598.0
+offset_right = 1059.9999
+offset_bottom = 621.0
+mouse_filter = 0
+text = "               Dubious Detectives"
+script = ExtResource("1_c80jh")
+
+[node name="PanelContainer" type="PanelContainer" parent="Detective" unique_id=902436450]
+visible = false
+layout_mode = 0
+offset_left = -18.0
+offset_top = -99.0
+offset_right = 305.0
+offset_bottom = -9.0
+
+[node name="Label" type="Label" parent="Detective/PanelContainer" unique_id=1639014880]
+layout_mode = 2
+mouse_filter = 0
+text = "You will be given a fake news article, and 
+you have to pick which aspects are 
+suspicious and decrease it's reliability."
+
+[connection signal="mouse_entered" from="Spot1" to="Spot1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Spot1" to="Spot1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Spot2" to="Spot2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Spot2" to="Spot2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Headline" to="Headline" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Headline" to="Headline" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Detective" to="Detective" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Detective" to="Detective" method="_on_mouse_exited"]

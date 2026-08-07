@@ -14,7 +14,7 @@ var regexSC = RegEx.new()
 
 func _ready():
 	max_length = 15 #only 15 character limit
-	regexN.compile(r"[0-9]")
+	regexN.compile(r"[0-9]") #compiles numbers.
 	regexSC.compile(r"[^\w\s]") #compiles special characters
 func _on_text_changed(new_text: String):
 	var search = regexN.search(new_text)

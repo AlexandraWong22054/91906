@@ -65,4 +65,5 @@ func _on_invalid_input_close_requested():
 	Old.hide()
 	Young.hide()
 	Letter.hide()
+	SpecChar.hide()
 #hides the messages in the pop up once closed so that new messages won't overlap

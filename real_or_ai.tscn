@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bteuadxch7725"]
+
+[ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_kaobr"]
+[ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_gmhob"]
+
+[node name="Real or AI" type="Control" unique_id=842895873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" type="Button" parent="." unique_id=1703464193]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 31.0
+text = "Exit"
+script = ExtResource("1_kaobr")
+
+[node name="Main Menu" type="Button" parent="." unique_id=1161526800]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 3.0
+offset_right = 1155.0
+offset_bottom = 34.0
+text = "Back to Title Screen
+"
+script = ExtResource("2_gmhob")
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

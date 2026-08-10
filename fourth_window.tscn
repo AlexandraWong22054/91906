@@ -1,6 +1,38 @@
 [gd_scene format=3 uid="uid://cj6a4s5nafqwc"]
 
 [ext_resource type="Script" uid="uid://o41fn74sqw16" path="res://spot_1.gd" id="1_c80jh"]
+[ext_resource type="Texture2D" uid="uid://jr0dg5wv6eip" path="res://Images/Diffspot1.png" id="2_0lhj3"]
+[ext_resource type="Script" uid="uid://bs5kammavv8nn" path="res://Diffspot.gd" id="2_dpg5f"]
+[ext_resource type="Texture2D" uid="uid://c41bjq7pyj33v" path="res://Images/Headlines.png" id="3_dpg5f"]
+[ext_resource type="Script" uid="uid://chuayp2jss6qh" path="res://Headlines.gd" id="4_nmr5k"]
+[ext_resource type="Texture2D" uid="uid://dxn88fqqgypiq" path="res://Images/Rewrite.png" id="4_r76vp"]
+[ext_resource type="Texture2D" uid="uid://djndwxpgn0eaw" path="res://Images/DETECTIVE.png" id="5_nmr5k"]
+[ext_resource type="Script" uid="uid://cg6e52tpjkka0" path="res://Rewrite.gd" id="6_nmr5k"]
+[ext_resource type="Script" uid="uid://c70umr7hxywul" path="res://Detective.gd" id="8_r1v50"]
+[ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="10_ywfqn"]
+[ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="11_8fga5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lhj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpg5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r76vp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nmr5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1v50"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lhj3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpg5f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r76vp"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmr5k"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="FourthWindow" type="Control" unique_id=1670295005]
 layout_mode = 3
@@ -9,6 +41,62 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Diffspot1" type="Sprite2D" parent="." unique_id=1775932488]
+position = Vector2(284.49997, 254.25)
+scale = Vector2(0.28935185, 0.28935185)
+texture = ExtResource("2_0lhj3")
+
+[node name="Button" type="Button" parent="Diffspot1" unique_id=2054261709]
+offset_left = -482.1119
+offset_top = -270.43195
+offset_right = 478.65616
+offset_bottom = 213.40808
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0lhj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dpg5f")
+script = ExtResource("2_dpg5f")
+
+[node name="Headlines" type="Sprite2D" parent="." unique_id=697448846]
+position = Vector2(838, 240.00003)
+scale = Vector2(0.31111112, 0.31111112)
+texture = ExtResource("3_dpg5f")
+
+[node name="Button" type="Button" parent="Headlines" unique_id=1418905909]
+offset_left = -488.57147
+offset_top = -228.21439
+offset_right = 472.1966
+offset_bottom = 255.62564
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0lhj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r76vp")
+script = ExtResource("4_nmr5k")
+
+[node name="Rewrite" type="Sprite2D" parent="." unique_id=1520118960]
+position = Vector2(293.5, 487.5)
+scale = Vector2(0.3175926, 0.3175926)
+texture = ExtResource("4_r76vp")
+
+[node name="Button" type="Button" parent="Rewrite" unique_id=494608977]
+offset_left = -508.51312
+offset_top = -206.23907
+offset_right = 452.25494
+offset_bottom = 277.60095
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0lhj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nmr5k")
+script = ExtResource("6_nmr5k")
+
+[node name="Detective2" type="Sprite2D" parent="." unique_id=228237022]
+position = Vector2(840.9999, 485.24997)
+scale = Vector2(0.23750001, 0.23750001)
+texture = ExtResource("5_nmr5k")
+
+[node name="Button" type="Button" parent="Detective2" unique_id=1154273875]
+offset_left = -505.26254
+offset_top = -401.05243
+offset_right = 446.31656
+offset_bottom = 352.63177
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0lhj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1v50")
+script = ExtResource("8_r1v50")
 
 [node name="Text" type="Label" parent="." unique_id=1908917681]
 layout_mode = 0
@@ -29,11 +117,12 @@ text = "Click the icon to play, and hover over the text for more information abo
 
 [node name="Spot1" type="Label" parent="." unique_id=1812347379]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 326.0
-offset_right = 389.0
-offset_bottom = 349.0
+offset_left = 144.49997
+offset_top = 325.25
+offset_right = 423.49997
+offset_bottom = 349.25
 mouse_filter = 0
+theme_override_font_sizes/font_size = 17
 text = "Spot the difference: Image Edition"
 script = ExtResource("1_c80jh")
 
@@ -44,6 +133,7 @@ offset_left = -15.0
 offset_top = 35.0
 offset_right = 274.0
 offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lhj3")
 
 [node name="Label" type="Label" parent="Spot1/PanelContainer" unique_id=638898750]
 layout_mode = 2
@@ -54,11 +144,12 @@ real and earn points for each correct answer."
 
 [node name="Spot2" type="Label" parent="." unique_id=1247127466]
 layout_mode = 0
-offset_left = 776.0
+offset_left = 692.99994
 offset_top = 326.0
-offset_right = 1060.0
-offset_bottom = 349.0
+offset_right = 993.99994
+offset_bottom = 350.0
 mouse_filter = 0
+theme_override_font_sizes/font_size = 17
 text = "Spot the difference: Headline Edition"
 script = ExtResource("1_c80jh")
 
@@ -69,6 +160,7 @@ offset_left = -15.0
 offset_top = 35.0
 offset_right = 274.0
 offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dpg5f")
 
 [node name="Label" type="Label" parent="Spot2/PanelContainer" unique_id=1399724787]
 layout_mode = 2
@@ -80,11 +172,12 @@ points for each correct answer."
 
 [node name="Headline" type="Label" parent="." unique_id=537529076]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 598.0
-offset_right = 389.0
-offset_bottom = 621.0
+offset_left = 165.49997
+offset_top = 585.5
+offset_right = 427.49997
+offset_bottom = 609.5
 mouse_filter = 0
+theme_override_font_sizes/font_size = 17
 text = "        Rewriting Headlines"
 script = ExtResource("1_c80jh")
 
@@ -95,6 +188,7 @@ offset_left = -15.0
 offset_top = -85.0
 offset_right = 362.0
 offset_bottom = -10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r76vp")
 
 [node name="Label" type="Label" parent="Headline/PanelContainer" unique_id=1283378]
 layout_mode = 2
@@ -105,11 +199,12 @@ to fit the prompt and create headline bias."
 
 [node name="Detective" type="Label" parent="." unique_id=1669206330]
 layout_mode = 0
-offset_left = 776.0
-offset_top = 598.0
-offset_right = 1059.9999
-offset_bottom = 621.0
+offset_left = 692.99994
+offset_top = 575.25
+offset_right = 976.9998
+offset_bottom = 599.25
 mouse_filter = 0
+theme_override_font_sizes/font_size = 17
 text = "               Dubious Detectives"
 script = ExtResource("1_c80jh")
 
@@ -120,6 +215,7 @@ offset_left = -18.0
 offset_top = -99.0
 offset_right = 305.0
 offset_bottom = -9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmr5k")
 
 [node name="Label" type="Label" parent="Detective/PanelContainer" unique_id=1639014880]
 layout_mode = 2
@@ -128,6 +224,25 @@ text = "You will be given a fake news article, and
 you have to pick which aspects are 
 suspicious and decrease it's reliability."
 
+[node name="Exit" type="Button" parent="." unique_id=1885456815]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 31.0
+text = "Exit"
+script = ExtResource("10_ywfqn")
+
+[node name="Main Menu" type="Button" parent="." unique_id=1138520150]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 3.0
+offset_right = 1155.0
+offset_bottom = 34.0
+text = "Back to Title Screen
+"
+script = ExtResource("11_8fga5")
+
+[connection signal="pressed" from="Diffspot1/Button" to="Diffspot1/Button" method="_on_pressed"]
+[connection signal="pressed" from="Headlines/Button" to="Diffspot1/Button" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Spot1" to="Spot1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Spot1" to="Spot1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Spot2" to="Spot2" method="_on_mouse_entered"]
@@ -136,3 +251,5 @@ suspicious and decrease it's reliability."
 [connection signal="mouse_exited" from="Headline" to="Headline" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Detective" to="Detective" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Detective" to="Detective" method="_on_mouse_exited"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]

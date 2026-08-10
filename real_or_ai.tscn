@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_kaobr"]
 [ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_gmhob"]
+[ext_resource type="Script" uid="uid://b3o4v3erkcgxw" path="res://Minigames.gd" id="3_gmhob"]
 
 [node name="Real or AI" type="Control" unique_id=842895873]
 layout_mode = 3
@@ -28,5 +29,24 @@ text = "Back to Title Screen
 "
 script = ExtResource("2_gmhob")
 
+[node name="Minigames" type="Button" parent="." unique_id=1772680752]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 38.0
+offset_right = 1150.0
+offset_bottom = 69.0
+text = "Back to Mini-games"
+script = ExtResource("3_gmhob")
+
+[node name="Label" type="Label" parent="." unique_id=736046539]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 91.0
+offset_right = 770.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 30
+text = "Click which image is REAL"
+
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]
+[connection signal="pressed" from="Minigames" to="Minigames" method="_on_pressed"]

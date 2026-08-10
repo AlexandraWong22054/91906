@@ -165,7 +165,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dpg5f")
 [node name="Label" type="Label" parent="Spot2/PanelContainer" unique_id=1399724787]
 layout_mode = 2
 mouse_filter = 0
-text = "Pick between 2 new headlines. One will 
+text = "Pick between 2 news headlines. One will 
 be made up. The other will be a real 
 headline. Pick which one is real and earn 
 points for each correct answer."
@@ -242,7 +242,9 @@ text = "Back to Title Screen
 script = ExtResource("11_8fga5")
 
 [connection signal="pressed" from="Diffspot1/Button" to="Diffspot1/Button" method="_on_pressed"]
-[connection signal="pressed" from="Headlines/Button" to="Diffspot1/Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Headlines/Button" to="Headlines/Button" method="_on_pressed"]
+[connection signal="pressed" from="Rewrite/Button" to="Rewrite/Button" method="_on_pressed"]
+[connection signal="pressed" from="Detective2/Button" to="Detective2/Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Spot1" to="Spot1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Spot1" to="Spot1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Spot2" to="Spot2" method="_on_mouse_entered"]

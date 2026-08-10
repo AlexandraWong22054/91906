@@ -49,7 +49,7 @@ func _on_text_submitted(new_age):
 	elif int_age > 123: #Error popup if age is over maximum
 		Invalid.show()
 		Old.show()
-	elif int_age < 10 and int_age > 0:
+	elif int_age < 10 and int_age > -1:
 		Invalid.show() #Error popup if age is under minimum
 		Young.show()
 	else:

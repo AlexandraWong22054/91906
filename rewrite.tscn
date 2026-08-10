@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_vm75w"]
 [ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_7vafg"]
+[ext_resource type="Script" uid="uid://b3o4v3erkcgxw" path="res://Minigames.gd" id="3_7vafg"]
 
 [node name="Rewrite" type="Control" unique_id=349311659]
 layout_mode = 3
@@ -28,5 +29,15 @@ text = "Back to Title Screen
 "
 script = ExtResource("2_7vafg")
 
+[node name="Minigames" type="Button" parent="." unique_id=306817610]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 38.0
+offset_right = 1150.0
+offset_bottom = 69.0
+text = "Back to Mini-games"
+script = ExtResource("3_7vafg")
+
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]
+[connection signal="pressed" from="Minigames" to="Minigames" method="_on_pressed"]

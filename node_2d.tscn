@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ba2shp4kfp0pj" path="res://start_button.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://ek1kbbgxfrmt" path="res://button_3.gd" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://5t75td7drkvp" path="res://settings_button.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://deqvhbujpk4jp" path="res://Images/1.png" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://cs4dcqx4xlpko" path="res://Images/2.png" id="5_kdubu"]
 
 [node name="Title Window" type="Control" unique_id=349448838]
 layout_mode = 3
@@ -37,6 +39,16 @@ offset_bottom = 592.0
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 script = ExtResource("1_wtcfe")
+
+[node name="1" type="Sprite2D" parent="." unique_id=1989113862]
+visible = false
+position = Vector2(599, 258.00003)
+scale = Vector2(0.7175926, 0.68703705)
+texture = ExtResource("4_q6r6c")
+
+[node name="2" type="Sprite2D" parent="." unique_id=1551351799]
+position = Vector2(576, 311)
+texture = ExtResource("5_kdubu")
 
 [connection signal="pressed" from="Start Button" to="Start Button" method="_on_pressed"]
 [connection signal="pressed" from="Settings Button" to="Start Button" method="_on_settings_button_pressed"]

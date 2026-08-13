@@ -51,6 +51,9 @@ func _on_text_submitted(new_text: String):
 		print("Name = ", player_name)
 		Continue.show() #Shows the "Click to Continue" button
 		Greeting.text = (str("Hello, ") + (player_name))
+		var file := FileAccess.open("user://player_name.txt", FileAccess.WRITE)
+		file.store_string(player_name)
+		file.close()
 
 func _on_no_input_close_requested(): #hides the popup window when the x is clicked.
 	Invalid.hide()

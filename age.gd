@@ -1,6 +1,6 @@
 extends LineEdit
 
-var player_age : String = ""
+var player_age: String = ""
 var regex_l: = RegEx.new()
 var regex_sc = RegEx.new()
 @onready var invalid = get_node("Invalid_Input")
@@ -20,26 +20,27 @@ func _on_text_changed(new_age):
 	var search2 = regex_sc.search(new_age)
 	if " " in new_age:
 		var cursor_place = caret_column #Save cursor
-		text = new_age.replace(" ","") #Replace space with nothing, removes the space
-		caret_column = cursor_place -1 #Reset cursor to saved
-		invalid.show() 
+		text = new_age.replace(" ", "") #Replace space with nothing, removes the space
+		caret_column = cursor_place - 1 #Reset cursor to saved
+		invalid.show()
 		space.show()
 	if search: #if a letter is found, do the following:
-		print("Found letter") 
+		print("Found letter")
 		var cursor_place = caret_column
 		var replacedage = regex_l.sub(new_age, "",)
 		text = replacedage
-		caret_column = cursor_place -1
+		caret_column = cursor_place - 1
 		invalid.show()
 		letter.show()
-	if search2: #if a special character is found, do the following: 
+	if search2: #if a special character is found, do the following:
 		print("Found Specchar")
 		var cursor_place = caret_column
 		var replacedage = regex_sc.sub(new_age, "",)
 		text = replacedage
-		caret_column = cursor_place -1
+		caret_column = cursor_place - 1
 		invalid.show()
 		spec_char.show()
+		
 
 func _on_text_submitted(new_age):
 	var int_age = int(new_age)
@@ -57,6 +58,9 @@ func _on_text_submitted(new_age):
 		player_age = new_age
 		print("Age = ", player_age)
 		proceed.show()
+		var file := FileAccess.open("user://player_age.txt", FileAccess.WRITE)
+		file.store_string(player_age)
+		file.close()
 
 func _on_invalid_input_close_requested():
 	invalid.hide()

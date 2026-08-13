@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://rric64vye8r1"]
+
+[ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_adv4l"]
+[ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_tgj6n"]
+[ext_resource type="Script" uid="uid://b3o4v3erkcgxw" path="res://Minigames.gd" id="3_r4or0"]
+[ext_resource type="Script" uid="uid://ci4fjdm3jd2j2" path="res://label.gd" id="4_tgj6n"]
+
+[node name="Stats" type="Control" unique_id=918533799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" type="Button" parent="." unique_id=1357492899]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 31.0
+text = "Exit"
+script = ExtResource("1_adv4l")
+
+[node name="Main Menu" type="Button" parent="." unique_id=124381407]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 3.0
+offset_right = 1155.0
+offset_bottom = 34.0
+text = "Back to Title Screen
+"
+script = ExtResource("2_tgj6n")
+
+[node name="Minigames" type="Button" parent="." unique_id=199513249]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 38.0
+offset_right = 1150.0
+offset_bottom = 69.0
+text = "Back to Mini-games"
+script = ExtResource("3_r4or0")
+
+[node name="Label" type="Label" parent="." unique_id=2118340271]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 127.0
+offset_right = 868.0
+offset_bottom = 190.0
+theme_override_font_sizes/font_size = 45
+text = "Current user information:"
+script = ExtResource("4_tgj6n")
+
+[node name="Name" type="Label" parent="Label" unique_id=347907203]
+layout_mode = 0
+offset_left = -222.0
+offset_top = 98.0
+offset_right = 116.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 50
+text = "USER NAME = "
+
+[node name="Age" type="Label" parent="Label" unique_id=1963296779]
+layout_mode = 0
+offset_left = -221.0
+offset_top = 201.0
+offset_right = 117.0
+offset_bottom = 329.0
+theme_override_font_sizes/font_size = 50
+text = "USER AGE = "
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]
+[connection signal="pressed" from="Minigames" to="Minigames" method="_on_pressed"]

@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_nibf4"]
 [ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_i8lqn"]
 [ext_resource type="Script" uid="uid://b3o4v3erkcgxw" path="res://Minigames.gd" id="3_i8lqn"]
+[ext_resource type="Script" uid="uid://m2xy88ywm3yf" path="res://title.gd" id="4_e08wg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e08wg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sj2er"]
 
 [node name="Headlines" type="Control" unique_id=614821983]
 layout_mode = 3
@@ -38,15 +43,104 @@ offset_bottom = 69.0
 text = "Back to Mini-games"
 script = ExtResource("3_i8lqn")
 
-[node name="Label" type="Label" parent="." unique_id=1536287784]
+[node name="Title" type="Label" parent="." unique_id=1536287784]
 layout_mode = 0
-offset_left = 401.0
-offset_top = 91.0
-offset_right = 770.0
-offset_bottom = 133.0
+offset_left = 325.0
+offset_top = 105.0
+offset_right = 878.0
+offset_bottom = 147.0
 theme_override_font_sizes/font_size = 30
-text = "Click which headline is REAL"
+text = "Click which headline is EXAGGERATED"
+horizontal_alignment = 1
+script = ExtResource("4_e08wg")
+
+[node name="TopHeadline" type="Label" parent="Title" unique_id=667315450]
+layout_mode = 0
+offset_left = -212.0
+offset_top = 95.0
+offset_right = 737.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="BottomHeadline" type="Label" parent="Title" unique_id=1804190168]
+layout_mode = 0
+offset_left = -335.0
+offset_top = 265.0
+offset_right = 836.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Topbutton" type="Button" parent="Title" unique_id=944791258]
+layout_mode = 0
+offset_left = -261.0
+offset_top = 58.0
+offset_right = 778.0
+offset_bottom = 189.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e08wg")
+
+[node name="Bottombutton" type="Button" parent="Title" unique_id=1415702300]
+layout_mode = 0
+offset_left = -260.0
+offset_top = 250.0
+offset_right = 778.0
+offset_bottom = 376.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sj2er")
+
+[node name="Answer" type="Label" parent="Title" unique_id=964957078]
+visible = false
+layout_mode = 0
+offset_left = 195.0
+offset_top = 402.0
+offset_right = 306.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 25
+text = "Correct!"
+
+[node name="next" type="Button" parent="Title" unique_id=1122442045]
+visible = false
+layout_mode = 0
+offset_left = 613.0
+offset_top = 435.0
+offset_right = 779.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 20
+text = "Next Round"
+
+[node name="Back" type="Button" parent="Title" unique_id=1904704128]
+visible = false
+layout_mode = 0
+offset_left = 605.0
+offset_top = 432.0
+offset_right = 791.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 25
+text = "Return"
+
+[node name="or" type="Label" parent="." unique_id=76107064]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 317.0
+offset_right = 644.0
+offset_bottom = 340.0
+text = "OR"
+horizontal_alignment = 1
+
+[node name="Note" type="Label" parent="." unique_id=1280055621]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 612.0
+offset_right = 665.0
+offset_bottom = 687.0
+text = "Please note all headlines are not real or reflective of real news. they are made up for the purpose of this game.
+
+"
 
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]
 [connection signal="pressed" from="Minigames" to="Minigames" method="_on_pressed"]
+[connection signal="pressed" from="Title/Topbutton" to="Title" method="_on_topbutton_pressed"]
+[connection signal="pressed" from="Title/Bottombutton" to="Title" method="_on_bottombutton_pressed"]
+[connection signal="pressed" from="Title/next" to="Title" method="_on_next_pressed"]
+[connection signal="pressed" from="Title/Back" to="Title" method="_on_back_pressed"]

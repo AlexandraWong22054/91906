@@ -3,6 +3,17 @@
 [ext_resource type="Script" uid="uid://dg5kxfvkrnqnm" path="res://exit.gd" id="1_kaobr"]
 [ext_resource type="Script" uid="uid://fcbp5u37bxsv" path="res://main_menu.gd" id="2_gmhob"]
 [ext_resource type="Script" uid="uid://b3o4v3erkcgxw" path="res://Minigames.gd" id="3_gmhob"]
+[ext_resource type="Script" uid="uid://dlnlm0ki43xgs" path="res://instructions.gd" id="4_cn2ts"]
+[ext_resource type="Texture2D" uid="uid://68s5pc1x56v8" path="res://Images/applesAI.jpg" id="5_uneas"]
+[ext_resource type="Texture2D" uid="uid://brt4rsqnxl8w7" path="res://Images/applereal.jpg" id="6_yveuu"]
+[ext_resource type="Texture2D" uid="uid://dn4e8hssreja7" path="res://Images/phoneAI.jpg" id="7_jvcvl"]
+[ext_resource type="Texture2D" uid="uid://de0lstj2q8glg" path="res://Images/phoneREAL.jpg" id="8_7mba7"]
+[ext_resource type="Texture2D" uid="uid://dsgyrwxfssafx" path="res://Images/deer.jpg" id="9_7yqsk"]
+[ext_resource type="Texture2D" uid="uid://bh0wgpartrdn7" path="res://Images/deerfake.jpg" id="10_stlo2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uneas"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yveuu"]
 
 [node name="Real or AI" type="Control" unique_id=842895873]
 layout_mode = 3
@@ -38,7 +49,7 @@ offset_bottom = 69.0
 text = "Back to Mini-games"
 script = ExtResource("3_gmhob")
 
-[node name="Label" type="Label" parent="." unique_id=736046539]
+[node name="Instructions" type="Label" parent="." unique_id=736046539]
 layout_mode = 0
 offset_left = 401.0
 offset_top = 91.0
@@ -46,7 +57,100 @@ offset_right = 770.0
 offset_bottom = 133.0
 theme_override_font_sizes/font_size = 30
 text = "Click which image is REAL"
+script = ExtResource("4_cn2ts")
+
+[node name="Left" type="Button" parent="Instructions" unique_id=511449119]
+layout_mode = 0
+offset_left = -176.0
+offset_top = 86.0
+offset_right = 105.0
+offset_bottom = 344.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uneas")
+
+[node name="Right" type="Button" parent="Instructions" unique_id=275093070]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 88.0
+offset_right = 522.0
+offset_bottom = 346.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yveuu")
+
+[node name="RightLabel" type="Label" parent="Instructions" unique_id=609917756]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 355.0
+offset_right = 511.0
+offset_bottom = 378.0
+horizontal_alignment = 1
+
+[node name="LeftLabel" type="Label" parent="Instructions" unique_id=47182573]
+layout_mode = 0
+offset_left = -169.0
+offset_top = 358.0
+offset_right = 96.0
+offset_bottom = 381.0
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="Instructions" unique_id=1439230905]
+visible = false
+layout_mode = 0
+offset_left = 87.0
+offset_top = 440.0
+offset_right = 257.0
+offset_bottom = 515.0
+theme_override_font_sizes/font_size = 25
+text = "Next Round"
+
+[node name="Return" type="Button" parent="Instructions" unique_id=493111845]
+visible = false
+layout_mode = 0
+offset_left = 87.0
+offset_top = 440.0
+offset_right = 259.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[node name="ApplesAi" type="Sprite2D" parent="Instructions" unique_id=1585863432]
+visible = false
+position = Vector2(383, 218)
+scale = Vector2(0.18463542, 0.17876467)
+texture = ExtResource("5_uneas")
+
+[node name="Applereal" type="Sprite2D" parent="Instructions" unique_id=1215677372]
+visible = false
+position = Vector2(-35, 214)
+scale = Vector2(0.050491977, 0.050491977)
+texture = ExtResource("6_yveuu")
+
+[node name="PhoneAi" type="Sprite2D" parent="Instructions" unique_id=1026733871]
+visible = false
+position = Vector2(384.99994, 218)
+scale = Vector2(0.08306451, 0.08306451)
+texture = ExtResource("7_jvcvl")
+
+[node name="PhoneReal" type="Sprite2D" parent="Instructions" unique_id=2026383654]
+visible = false
+position = Vector2(-33.999996, 214)
+scale = Vector2(0.20775391, 0.221864)
+texture = ExtResource("8_7mba7")
+
+[node name="Deer" type="Sprite2D" parent="Instructions" unique_id=275397209]
+visible = false
+position = Vector2(381.5632, 240.50002)
+scale = Vector2(0.18661995, 0.20344825)
+texture = ExtResource("9_7yqsk")
+
+[node name="Deerfake" type="Sprite2D" parent="Instructions" unique_id=385702377]
+visible = false
+position = Vector2(-33, 233.99998)
+scale = Vector2(0.055402953, 0.055402957)
+texture = ExtResource("10_stlo2")
 
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
 [connection signal="pressed" from="Main Menu" to="Main Menu" method="_on_pressed"]
 [connection signal="pressed" from="Minigames" to="Minigames" method="_on_pressed"]
+[connection signal="pressed" from="Instructions/Left" to="Instructions" method="_on_left_pressed"]
+[connection signal="pressed" from="Instructions/Right" to="Instructions" method="_on_right_pressed"]
+[connection signal="pressed" from="Instructions/Next" to="Instructions" method="_on_next_pressed"]
+[connection signal="pressed" from="Instructions/Return" to="Instructions" method="_on_return_pressed"]

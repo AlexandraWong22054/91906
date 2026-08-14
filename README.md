@@ -8,7 +8,7 @@ INSTRUCTIONS (WINDOWS COMPUTER FROM .EXE FILE)
 3) Find 91906.exe in downloads and double click
 4) Program should run 
 
-IF DOWNLOADING FROM GODOT 
+IF DOWNLOADING FROM GITHUB 
 Note: You need Github desktop and Godot 4 installed on computer.
 1) Copy the URL of this 91906 repository
 2) Open github desktop
